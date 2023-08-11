@@ -1,0 +1,19 @@
+  vector<int> freq(n,0);
+        for(int i=0;i<n;i++){
+            int idx=arr[i]-1;
+            freq[idx]++;
+        }
+        vector<int> ans;
+        
+        for(int i=0;i<freq.size();i++){
+            if(freq[i]>1){
+                ans.push_back(i+1);
+                break;
+            }}
+            for(int i=0;i<freq.size();i++){
+            if(freq[i]==0){
+                ans.push_back(i+1);
+                break;
+            }
+        }
+        return ans;
