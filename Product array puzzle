@@ -1,0 +1,19 @@
+ vector<long long int> productExceptSelf(vector<long long int>& arr, int n) {
+       vector<long long int> ans;
+       if(n==1){
+           ans.push_back(1);
+       }
+       else{
+           for(int i=0;i<n;i++){
+              long long  int puzz=1;
+               for(int j=0;j<n;j++){
+                   if(i==j) continue;
+                   else{
+                       puzz *= arr[j];
+                   }
+               }
+               ans.push_back(puzz);
+           }
+       }
+       return ans;
+    }
