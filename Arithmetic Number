@@ -1,0 +1,16 @@
+  int inSequence(int A, int B, int C){
+        // code here
+  /* double num;
+   num=((B-A)/C)+1;
+   if(num==static_cast<int>(num)) return 1;
+   return 0;*/
+    if(C==0){
+            return A==B;
+        }
+        else if((B-A)%C==0 and (B-A)/C >=0){
+            return 1;
+        }
+        else{
+            return 0;
+        }
+    }
