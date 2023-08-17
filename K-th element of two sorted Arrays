@@ -1,0 +1,27 @@
+int kthElement(int arr1[], int arr2[], int n, int m, int k)
+    {
+            int left= n- 1;
+    int right = 0;
+
+    while (left >= 0 && right< m) {
+        if (arr1[left] > arr2[right]) {
+            swap(arr1[left], arr2[right]);
+            left--;
+            right++;
+        } else {
+            break;
+        }
+    }
+
+    sort(arr1, arr1 + n);
+    sort(arr2, arr2 + m);
+    int final[n+m];
+    for(int i=0;i<n;i++){
+        final[i]=arr1[i];
+    }
+    int j=0;
+    for(int i=n;i<n+m;i++){
+        final[i]=arr2[j++];
+    }
+    return final[k-1];
+        } 
