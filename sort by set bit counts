@@ -1,0 +1,19 @@
+static bool comparator(int i,int j){
+        int ct1=0,ct2=0;
+        while(i!=0){
+            int rbsm=i&-i;
+            ct1++;
+            i-=rbsm;
+        }
+        i=j;
+        while(i!=0){
+            int rbsm=i&-i;
+            ct2++;
+            i-=rbsm;
+        }
+        return ct1>ct2;
+    }
+    void sortBySetBitCount(int arr[], int n)
+    {
+     stable_sort(arr,arr+n,comparator);
+    }
