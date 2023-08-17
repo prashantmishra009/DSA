@@ -1,0 +1,48 @@
+   int s_count(int A[], int N, int pages)
+    {
+        int count = 1, last = 0;
+        
+        for(int i{0}; i < N; ++i)
+        {
+            if(last + A[i] <= pages)
+            {
+                last = last + A[i];
+            }
+            else
+            {
+                count++;
+                last = A[i];
+            }
+        }
+        return count;
+    }
+  
+    int findPages(int A[], int N, int M) 
+    {
+        if(M > N)   return -1;
+        int low = 0;
+        long long high = 0;
+        
+        for(int i{0}; i < N; ++i)
+        {
+            low = max(low,A[i]);
+            high += A[i];
+        }
+        
+        while(low <= high)
+        {
+            int mid = low + (high - low)/2;
+            
+            int count = s_count(A,N,mid);
+            
+            if(count > M)
+            {
+                low = mid + 1;
+            }
+            else
+            {
+                high = mid - 1;
+            }
+        }
+        return low;
+    }
