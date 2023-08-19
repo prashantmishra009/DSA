@@ -1,0 +1,20 @@
+	int isPalindrome(string S)
+	{
+	    // Your code goes here
+	    int s=0;
+	    int n=S.size();
+	    int e=n-1;
+	    int final=0;
+	    while(s<e){
+	        if(S[s]==S[e]){
+	            final=1;
+	            s++;
+	            e--;
+	        }
+	        else{
+	            final=0;
+	            break;
+	        }
+	    }
+	    return final;
+	}
