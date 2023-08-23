@@ -1,0 +1,22 @@
+	int LongestRepeatingSubsequence(string str){
+		    // Code 
+		    int n=str.length();
+		    int lrs[n+1][n+1];
+		       for(int i=0; i<=n; i++){
+             lrs[i][0]=0;
+		       }
+        
+          for(int j=0; j<=n; j++){
+             lrs[0][j]=0;
+          }
+		    for(int i=0;i<=n;i++){
+		        for(int j=0;j<=n;j++){
+                  if(i==0 || j==0) lrs[i][j]==0;
+                  else if(str[i-1]==str[j-1] && (i!=j)) lrs[i][j]=1+lrs[i-1][j-1];
+                  else{
+                      lrs[i][j]=max((lrs[i-1][j]),(lrs[i][j-1]));
+                  }
+		    }
+		}
+		return lrs[n][n];
+}
