@@ -1,0 +1,16 @@
+ int nthFibonacci(int n){
+        // code here
+        if(n==0) return 0;
+        if(n==1) return 1;
+        int t1=0;
+        int t2=1;
+        int i=2;
+        int next=0;
+        while(i<=n){
+            next=(t1+t2)% 1000000007;
+            t1=t2;
+            t2=next;
+            i++;
+    }
+    return t2;
+    }
