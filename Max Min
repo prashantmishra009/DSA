@@ -1,0 +1,6 @@
+ int findSum(int a[], int n)
+    {
+    	//code here.
+    	sort(a,a+n);
+    	return a[0]+a[n-1];
+    }
