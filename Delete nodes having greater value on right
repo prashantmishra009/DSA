@@ -1,0 +1,33 @@
+Node* reverse(Node* head){
+    Node* prev = nullptr;
+    Node* curr = head;
+    while(curr != nullptr){
+        Node* temp = curr->next;
+        curr->next = prev;
+        prev = curr;
+        curr = temp;
+    }
+    return prev;
+}
+
+Node *compute(Node *head)
+{
+   Node* new_head = reverse(head);
+   Node* prev = new_head;
+   Node* curr = new_head->next;
+   int max = new_head->data;
+   while(curr != nullptr){
+       if(curr->data < max){
+           Node* temp = curr;
+           prev -> next = curr->next;
+           curr = prev->next;
+           delete temp;
+       }else{
+           max = curr-> data;
+           prev = curr;
+           curr = curr->next;
+       }
+   }
+   return reverse(new_head);
+        
+    }
