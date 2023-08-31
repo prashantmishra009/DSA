@@ -1,0 +1,24 @@
+Node* deleteNode(Node *head,int pos)
+{
+    //Your code here
+    if(pos==1){
+        Node* temp=head;
+        head=head->next;
+        temp->next=NULL;
+        delete temp;
+    }
+    else{
+        Node* curr=head;
+        Node* prev=NULL;
+        int cnt=1;
+        while(cnt<pos){
+            prev=curr;
+            curr=curr->next;
+            cnt++;
+        }
+        prev->next=curr->next;
+        curr->next=NULL;
+        delete curr;
+    }
+    return head;
+}
