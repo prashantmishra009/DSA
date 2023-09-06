@@ -1,0 +1,17 @@
+  bool find3Numbers(int a[], int n, int x)
+    {
+        //Your Code Heresort
+        sort(a,a+n);
+        for(int i=0;i<n;i++){
+            int j=i+1;
+            int k=n-1;
+            while(j<k){
+                int sum=a[i]+a[j]+a[k];
+                if(sum==x) return 1;
+               if(sum>x) k--;
+               if(sum<x) j++;
+            }
+        }
+        return 0;
+        
+    }
