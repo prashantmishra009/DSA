@@ -1,0 +1,40 @@
+ bool isRotated(string str1, string str2)
+    {
+        // Your code here
+        int n=str1.length();
+        int m=str2.length();
+        if(n !=m ) return 0;
+        if(n==1 && m==1) {
+            if(str1[0]==str2[0]) return 1;
+            return 0;
+        }
+        //if(n !=m ) return 0;
+        //int n=str1.length();
+        if(str1[0]==str2[n-2]){
+            if(str1[1]==str2[n-1]){
+                return 1;
+            }
+        }
+        int s=0,e=2;
+        while(s<n-2 && e<m){
+             if(str1[s++]==str2[e++]) continue;
+            return 0;
+        }
+         if(str2[0]==str1[n-2]){
+            if(str2[1]==str1[n-1]){
+                return 1;
+            }
+        }
+        
+        int i=2,j=0;
+        while(i<n && j<m-2){
+            if(str1[i++]==str2[j++]) continue;
+            return 0;
+        }
+       /*  if(str1[0]==str2[n-2]){
+            if(str2[1]==str1[n-1]){
+                return 1;
+            }
+        }*/
+        return 0;
+    }
