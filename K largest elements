@@ -1,0 +1,11 @@
+vector<int> kLargest(int arr[], int n, int k)
+    {
+        // code here
+        vector<int>ans;
+        int z=n-1;
+        sort(arr,arr+n);
+        for(int i=k;i>0;i--){
+            ans.push_back(arr[z--]);
+        }
+        return ans;
+    }
