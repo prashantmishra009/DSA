@@ -1,0 +1,13 @@
+ int findDiff(int arr[], int n) {
+        unordered_map<int,int> temp;
+        for(int i=0;i<n;i++){
+            temp[arr[i]]++;
+        }
+        int great=INT_MIN;
+        int less=INT_MAX;
+          for (auto it = temp.begin(); it != temp.end(); ++it) {
+       if(it->second > great) great=it->second;
+       if(it->second<less) less=it->second;
+    }
+    return great-less;
+    }
