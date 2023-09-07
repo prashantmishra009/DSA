@@ -1,0 +1,6 @@
+int thirdLargest(int a[], int n)
+    {
+         //Your code here
+         sort(a,a+n);
+         return a[n-3];
+    }
